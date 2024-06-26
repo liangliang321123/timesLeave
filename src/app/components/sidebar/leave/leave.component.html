@@ -1,0 +1,23 @@
+<h1>Leave Code</h1>
+
+<button class="btn btn-primary" (click)="openPopUp()">Add Leave Code</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">LeaveID</th>
+            <th scope="col">Leave Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let l of leaves; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{l.leaveID}}</td>
+            <td>{{l.leaveName}}</td>
+            <td><button (click)="handleDeleteLeave(l.leaveID)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<app-leave-add *ngIf="isOpenPopUp" (leaveAdded)="updateLeaveList()" (closePopUp)="closePopUp()"></app-leave-add>

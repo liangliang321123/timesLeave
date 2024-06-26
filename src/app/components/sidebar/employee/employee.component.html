@@ -1,0 +1,31 @@
+<h1>Employee</h1>
+<div class="d-flex justify-content-between align-items-center">
+    <input class="border border-dark rounded" placeholder="Find an employee">
+    <button (click)="openPopUp()" class="btn btn-primary">Add an Employee</button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">EMPID</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Join Date</th>
+            <th scope="col">DepartmentID</th>
+            <th scope="col">Role</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employees; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{e.employeeID}}</td>
+            <td>{{e.firstName}} {{e.lastName}}</td>
+            <td>{{e.joinDate}}</td>
+            <td>{{e.departmentID}}</td>
+            <td>{{e.role}}</td>
+            <td><button (click)="handleDeleteEmployee(e.employeeID)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<app-employee-add *ngIf="isOpenPopUp" (employeeAdded)="updateEmployeeList()"
+    (closePopUp)="closePopUp()"></app-employee-add>

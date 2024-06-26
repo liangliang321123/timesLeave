@@ -1,0 +1,11 @@
+<div class="Header-HomePage"> <!--Header -->
+    <div class="d-flex justify-content-between align-items-center">
+        <img [src]="imagePath" alt="Times Logo" /> <!--Come back fix later-->
+        <h2>LEAVE MANAGEMENT</h2>
+        <div class="border border-5 border-dark rounded-1 border-width">
+            <p>UserID: {{currentUser?.employeeID}}</p>
+            <p>Role: {{currentUser?.role}}</p>
+            <p>Login Time: {{currentDate | date: 'medium'}}</p>
+        </div>
+    </div>
+</div>

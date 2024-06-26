@@ -1,0 +1,50 @@
+<div class="popup-overlay">
+    <div class="popup-content">
+        <div class="form-group ">
+            <form #employeeForm="ngForm">
+                <div>
+                    <label>Login Username:</label>
+                    <input class="form-control" placeholder="Example : EMP001" ngModel name="loginUsername">
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input class="form-control" placeholder="Password" ngModel name="password" type="password">
+                </div>
+                <div>
+                    <label>First Name:</label>
+                    <input class="form-control" placeholder="First Name" ngModel name="firstName">
+                </div>
+                <div>
+                    <label>Last Name:</label>
+                    <input class="form-control" placeholder="Last Name" ngModel name="lastName">
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <input class="form-control" placeholder="Email" ngModel name="email">
+                </div>
+                <div>
+                    <label>Role:</label>
+                    <select class="form-control" ngModel name="role" [(ngModel)]="defaultRole">
+                        <option selected value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <div>
+                    <label>DepartmentID:</label>
+                    <select class="form-control" [(ngModel)]="defaultDepartmentID" name="departmentID">
+                        <option *ngFor="let d of departments" [value]="d.departmentID">
+                            {{d.departmentID}} - {{d.departmentName}}
+                        </option>
+                    </select>
+                </div>
+                <div>
+                    <label>Join Date:</label>
+                    <input class="form-control" placeholder="Join Date" ngModel name="joinDate" type="date">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 " (click)="handleAddEmployee(employeeForm)">Add
+                    Add Employee</button>
+                <button class="btn btn-primary mb-2 " (click)="handleClosePopUp()">Back</button>
+            </form>
+        </div>
+    </div>
+</div>

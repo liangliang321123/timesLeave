@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-between align-items-center">
+    <div class="sidenav">
+        <ul class="sidenav-nav">
+            <li class="sidenav-nav-item" *ngFor="let data of navData">
+                <a class="sidenav-nav-link" [routerLink]="[data.routeLink]">
+                    <span class="sidenav-link-text">{{data.label}}</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="component-container w-100 p-3">
+        <div class="mainnav">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['Employee']">Employee</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['Leave']">Leave</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['Enrollment']">Enrollment</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link">Grades</a>
+        </li>
+    </ul>
+</nav>
+<div class="component-container">
+    <router-outlet></router-outlet>
+</div> -->
