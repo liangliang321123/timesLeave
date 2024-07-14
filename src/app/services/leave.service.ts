@@ -14,8 +14,8 @@ export class LeaveService {
     return this.http.get<leave[]>(`${environment.apiHost}/api/Leave/Leave`);
   }
 
-  public postLeave(leaveObj: Partial<leave>): Observable<leave[]> {
-    return this.http.post<leave[]>(
+  public postLeave(leaveObj: Partial<leave>): Observable<leave> {
+    return this.http.post<leave>(
       `${environment.apiHost}/api/Leave/Leave`,
       leaveObj
     );

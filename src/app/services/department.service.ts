@@ -15,4 +15,10 @@ export class DepartmentService {
       `${environment.apiHost}/api/Leave/Department`
     );
   }
+
+  public deleteDepartment(id: number) {
+    return this.http.delete(
+      `${environment.apiHost}/api/Leave/Department/${id}`
+    );
+  }
 }

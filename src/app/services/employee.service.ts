@@ -16,8 +16,8 @@ export class EmployeeService {
     );
   }
 
-  public postEmployees(employeeObj: Partial<employee>): Observable<employee[]> {
-    return this.http.post<employee[]>(
+  public postEmployees(employeeObj: Partial<employee>): Observable<employee> {
+    return this.http.post<employee>(
       `${environment.apiHost}/api/Leave/Employee`,
       employeeObj
     );
